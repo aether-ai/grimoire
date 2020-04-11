@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Grimoire
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Grimoire</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <img src="../../assets/spellbook.svg" class="logo">
+
+  <h1 class="ion-text-center">Grimoire is the Wix of Data Analysis</h1>
+  <h2 class="ion-text-center">Quickly run predefined workflows or create your own without any code</h2>
+  <ion-grid style="height: 100%">
+    <ion-row style="height: 100%">
+      <ion-col size="6">
+        <ion-card style="height: 100%" (click)="utilityService.navURL('/library')">
+          <ion-grid style="height: 100%">
+            <ion-row style="height: 40%">
+            </ion-row>
+            <ion-row style="height: 50%">
+              <ion-col offset=3 size=6>
+                <ion-card-header class="ion-text-center">
+                  <ion-card-title style="font-size: 100px;">Cast</ion-card-title>
+                  <ion-card-subtitle style="font-size: 50px">Run data workflows</ion-card-subtitle>
+                </ion-card-header>
+              </ion-col>
+            </ion-row>
+            <ion-row style="height: 10%">
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card style="height: 100%" (click)="utilityService.navURL('/conjure')">
+          <ion-grid style="height: 100%">
+            <ion-row style="height: 40%">
+            </ion-row>
+            <ion-row style="height: 50%">
+              <ion-col offset=3 size=6>
+                <ion-card-header class="ion-text-center">
+                  <ion-card-title style="font-size: 100px;">Conjure</ion-card-title>
+                  <ion-card-subtitle style="font-size: 50px;">Create new data workflows</ion-card-subtitle>
+                </ion-card-header>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,128 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+
+
+.alertbox {
+ 
+    .alert-message {
+    font-size: 20px;
+    min-width: 100%;
+    }
+    }
+
+@media only screen and (min-height: 600px) and (min-width: 768px){
+ .chat-modal{
+    .modal-wrapper {
+        position: absolute;
+        width: 450px !important;
+        left: calc(100% - (450px)) !important;
+        height: 400px !important;
+        top: calc(100% - (400px));
+      }
+ }   
+}
+
+ @media only screen and (min-height: 600px) and (min-width: 768px){
+
+ .menu-modal{
+    .modal-wrapper {
+        position: absolute;
+        width: 400px !important;
+        left: calc(100% - (400px)) !important;
+        height: 350px !important;
+        bottom: calc(100% - (350px));  
+      }
+ }
+}
+
+.menu-popover {
+    width: 400px !important;
+  }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+  }
+
+  .tooltip .tooltiptextleft {
+    visibility: hidden;
+    width: 150px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 105%;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .tooltip:hover .tooltiptextleft {
+    visibility: visible;
+  }
+
+  .feature-icon {
+    margin-bottom: 4px;
+  }
+.stick-right{
+  position:left;
+  right:0
+}
+
+
+.top-content{
+  border-bottom: 1px solid ;
+  border-top: 1px solid ;
+
+  //box-shadow: 5px 10px 8px 10px #888888;
+}

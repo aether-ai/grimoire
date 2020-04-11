@@ -1,0 +1,11 @@
+{
+      "spell_type": "water",
+      "spell_name": "highlight",
+      "has_user_spell_inputs": true,
+      "takes_mana": true,
+      "reqs": [],
+      "spell_info": "highlights relevant data",
+      "spell_inputs_metadata": [],
+      "spell_inputs": {},
+      "spell_output": "highlight"
+}

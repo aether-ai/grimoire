@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Grimoire
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="top-content">
+    <ion-col>
+      <a (click)="utilityService.navURL('/home')">Home</a> > Library
+    </ion-col>
+  </ion-row>
+  <ion-grid>
+
+    <h1 class = "ion-text-center">Grimoires</h1>
+    <ion-searchbar [(ngModel)]="searchTerm"></ion-searchbar>
+
+    <ion-row>
+      <ion-col *ngFor="let grim of grims;let i = index" size=3>
+        <ion-card *ngIf="checkSearch(grim)==true">
+          <ion-row>
+            <ion-col class = "ion-text-center">
+              <img src="../../assets/spellbook.png" class="spell_image" />
+            </ion-col>
+          </ion-row>
+          <ion-card-header class = "ion-text-center">
+            <ion-card-title>
+              <h1>{{grim["name"]}}</h1>
+            </ion-card-title>
+            <ion-card-subtitle>
+              <h2>{{grim["value"]}}</h2>
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <div class = "ion-text-center">
+              <ion-row>
+
+                <ion-col>
+                  <div class="tooltip">
+                    <ion-button shape="round" color="medium" (click)="viewGrim(grim)">
+                      <ion-icon name="eye"></ion-icon>
+                    </ion-button>
+                    <span class="tooltiptext">View Details</span>
+                  </div>
+                </ion-col>
+                <ion-col>
+                  <ion-button shape="round" (click)="castGrim(grim);">Cast Spells</ion-button>
+                </ion-col>
+                <ion-col>
+                  <div class="tooltip">
+                    <ion-button shape="round" color="medium" (click)="downloadGrim(grim)">
+                      <ion-icon name="download"></ion-icon>
+                    </ion-button>
+                    <span class="tooltiptext">Download Project</span>
+                  </div>
+                </ion-col>
+
+              </ion-row>
+            </div>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

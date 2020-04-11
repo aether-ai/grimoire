@@ -1,0 +1,1 @@
+{"name": "Heatmap Viz", "value": "Show a heatmap of your data", "spells": [{"has_user_spell_inputs": true, "reqs": [], "spell_info": "displays heatmap of data", "spell_inputs": {}, "spell_inputs_metadata": [], "spell_name": "heatmap", "spell_output": "heatmap", "spell_type": "nature", "takes_mana": true}], "spell_path": "grimoire/Heatmap_grim.json"}

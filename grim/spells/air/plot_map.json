@@ -1,0 +1,11 @@
+{
+      "spell_type": "air",
+      "spell_name": "plot_map",
+      "has_user_spell_inputs": true,
+      "takes_mana": true,
+      "reqs": [],
+      "spell_info": "displays map with data",
+      "spell_inputs_metadata": [],
+      "spell_inputs": {},
+      "spell_output": "map_plot"
+}

@@ -1,0 +1,155 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Grimoire
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-row class="top-content">
+    <ion-col>
+      <a (click)="utilityService.navURL('/home')">Home</a> > Conjure
+    </ion-col>
+  </ion-row>
+  <ion-grid>
+    <h2 class = "ion-text-center">Create new Grimoires</h2>
+    <div *ngIf="conjure_type=='grim'">
+      <br>
+      <br>
+      <ion-row>
+        <ion-col>
+
+          <ion-list class = "ion-text-center">
+            <ion-item>
+              <ion-label>Grimoire Name:</ion-label>
+              <ion-input type="text" placeholder="Name" [(ngModel)]="new_grim_name"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Grimoire Description:</ion-label>
+              <ion-input type="text" placeholder="Description" [(ngModel)]="new_grim_desc"></ion-input>
+            </ion-item>
+          </ion-list>
+          <div class = "ion-text-center">
+            <ion-button *ngIf="ifRealGrim() == true" shape="round" color="warning" (click)="createGrim();">Create
+              Grimoire
+            </ion-button>
+
+            <ion-button *ngIf="ifRealGrim() == false" shape="round" color="warning" disabled>Create Grimoire
+            </ion-button>
+          </div>
+          <br>
+          <br>
+          <div *ngIf="showTable">
+            <ion-segment (ionChange)="segmentChanged($event)" value="{{spell_view}}" [(ngModel)]="spell_view">
+              <ion-segment-button value="card">
+                <ion-label>Card View</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="table">
+                <ion-label>Table View</ion-label>
+              </ion-segment-button>
+            </ion-segment>
+
+            <div *ngIf="spell_view=='table'">
+
+              <table id="spell_table" datatable [dtOptions]="dtOptions" class="row-border hover">
+                <thead>
+                  <tr>
+                    <th>Spell Name</th>
+                    <th>Spell Info</th>
+                    <th>Spell Type</th>
+                    <th>takes mana?</th>
+                    <th>Requirements</th>
+                    <th>Spell Output</th>
+                    <th>Add Spell</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let spell of spells; let i = index">
+                    <td>{{spell["spell_name"]}}</td>
+                    <td>{{spell["spell_info"]}}</td>
+                    <td>{{spell["spell_type"]}}</td>
+                    <td>{{spell["takes_mana"]}}</td>
+                    <td>{{spell["reqs"]}}</td>
+                    <td>{{spell["spell_output"]}}</td>
+                    <td>
+
+                      <ion-button *ngIf="inNewGrim(spell) == false && metRequirements(spell)" shape="round"
+                        (click)="addToGrim(spell);">Add to Grimoire
+                      </ion-button>
+
+                      <ion-button *ngIf="inNewGrim(spell) == true" shape="round" color="danger"
+                        (click)="removeFromGrim(spell);">Remove from Grimoire</ion-button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+
+            <div *ngIf="spell_view=='card'" scrollY="true" class="card-view">
+
+
+              <ion-searchbar [(ngModel)]="searchTerm"></ion-searchbar>
+
+
+              <div *ngFor="let spell_type of utilityService.keys(spells_map);">
+                <h2> {{spell_type}}</h2>
+                <ion-row>
+
+                  <!-- check search here-->
+                  <div *ngFor="let spell of spells_map[spell_type]; let i = index">
+                    <div *ngIf="checkSearch(spell)==true">
+                      <ion-col size=4>
+
+
+                        <ion-card class = "ion-text-center">
+                          <ion-row>
+                            <ion-col class = "ion-text-center">
+                              <img src="{{spell['spell_image']}}" class="spell_image" />
+                            </ion-col>
+                          </ion-row>
+
+                          <ion-card-header class = "ion-text-center">
+                            <ion-card-title>
+                              {{spell["spell_name"]}}
+                            </ion-card-title>
+                            <ion-card-subtitle>
+                              {{spell["spell_info"]}}
+                            </ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content class = "ion-text-center">
+                            <ion-button *ngIf="inNewGrim(spell) == false && metRequirements(spell)" shape="round"
+                              (click)="addToGrim(spell);">Add to Grimoire
+                            </ion-button>
+
+                            <ion-button *ngIf="inNewGrim(spell) == true" shape="round" color="danger"
+                              (click)="removeFromGrim(spell);">Remove from Grimoire</ion-button>
+
+                            <div *ngIf='spell["reqs"].length > 0'>
+                              <b>Requirements: {{spell["reqs"]}}</b>
+                            </div>
+
+
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-col>
+                    </div>
+                  </div>
+
+                </ion-row>
+
+              </div>
+            </div>
+
+          </div>
+        </ion-col>
+
+        <ion-col>
+          <iframe [src]='safeUrl'>
+            <p>Your browser does not support iframes.</p>
+          </iframe>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+</ion-content>

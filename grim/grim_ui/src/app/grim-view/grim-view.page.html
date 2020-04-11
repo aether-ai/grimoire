@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Grimoire
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row class="top-content">
+    <ion-col>
+      <a (click)="utilityService.navURL('/new-home')">Home</a> > <a
+        (click)="utilityService.navURL('/library')">Library</a>
+      > {{grim["name"]}}
+    </ion-col>
+  </ion-row>
+
+  <ion-grid style="height: 100%">
+
+
+
+
+
+    <ion-row style="height: 100%">
+      <ion-col size="4">
+
+        <div class = "ion-text-center">
+          <h1>{{grim["name"]}}</h1>
+          <h2>{{grim["value"]}}</h2>
+          <h3>List of spells:</h3>
+
+        </div>
+
+        <ion-card *ngFor="let spell of grim['spells'];let s = index">
+          <ion-row>
+            <ion-col class = "ion-text-center">
+              <img src="../../assets/spell_images/{{spell['spell_type']}}/{{spell['spell_name']}}.png"
+                class="spell_image" />
+            </ion-col>
+          </ion-row>
+          <ion-card-header class = "ion-text-center">
+            <ion-card-title>
+              {{spell["spell_name"]}}
+            </ion-card-title>
+            <ion-card-subtitle>
+              {{spell["spell_info"]}}
+            </ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+
+        <ion-button shape="round" expand="full" (click)="castGrim(grim);">Cast Spells</ion-button>
+
+      </ion-col>
+
+      <ion-col size="8">
+        <iframe *ngIf="showTest" [src]='safeUrl'>
+          <p>Your browser does not support iframes.</p>
+        </iframe>
+      </ion-col>
+
+
+    </ion-row>
+
+
+  </ion-grid>
+
+
+
+</ion-content>

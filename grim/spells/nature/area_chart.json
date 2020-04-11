@@ -1,0 +1,11 @@
+{
+      "spell_type": "nature",
+      "spell_name": "area_chart",
+      "has_user_spell_inputs": true,
+      "takes_mana": true,
+      "reqs": [],
+      "spell_info": "displays area chart of data",
+      "spell_inputs_metadata": [],
+      "spell_inputs": {},
+      "spell_output": "area_chart"
+}

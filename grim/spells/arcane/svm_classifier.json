@@ -1,0 +1,23 @@
+{
+      "spell_type": "arcane",
+      "spell_name": "svm_classifier",
+      "has_user_spell_inputs": false,
+      "takes_mana": false,
+      "reqs": ["holy_heal"],
+      "spell_info": "creates SVM model from healed data",
+      "spell_inputs_metadata": [ {
+          "takesMana": false,
+          "input_name": "healed_data",
+          "takesCSV": false,
+          "takesAPI": false,
+          "takesDB": false,
+          "takesCSVCol": false,
+          "info": "Output from heal spell",
+	  "example": "healed_data"
+      }
+      ],
+      "spell_inputs": {
+        "healed_data": "healed_data"
+      },
+      "spell_output": "svm_model"
+    }

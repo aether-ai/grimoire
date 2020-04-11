@@ -1,0 +1,11 @@
+{
+      "spell_type": "nature",
+      "spell_name": "bar_chart",
+      "has_user_spell_inputs": true,
+      "takes_mana": true,
+      "reqs": [],
+      "spell_info": "displays bar chart of data",
+      "spell_inputs_metadata": [],
+      "spell_inputs": {},
+      "spell_output": "bar_chart"
+}

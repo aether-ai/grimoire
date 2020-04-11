@@ -1,0 +1,23 @@
+{
+      "spell_type": "arcane",
+      "spell_name": "rf_reg",
+      "has_user_spell_inputs": false,
+      "takes_mana": false,
+      "reqs": ["holy_heal"],
+      "spell_info": "creates Random forest model from healed data",
+      "spell_inputs_metadata": [ {
+          "takesMana": false,
+          "input_name": "healed_data",
+          "takesCSV": false,
+          "takesAPI": false,
+          "takesDB": false,
+          "takesCSVCol": false,
+          "info": "Output from heal spell",
+	  "example": "healed_data"
+      }
+      ],
+      "spell_inputs": {
+        "healed_data": "healed_data"
+      },
+      "spell_output": "model"
+    }
