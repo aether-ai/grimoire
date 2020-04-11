@@ -82,7 +82,7 @@ export class GrimViewPage implements OnInit {
       .then((data) => { // Success
         console.log(data)
         //open new url
-        window.open(this.streamlit_url, '_blank');
+        window.open(environment.streamlit_url, '_blank');
       }, (err) => {
         console.log("ok we should back out");
         console.log(err);
