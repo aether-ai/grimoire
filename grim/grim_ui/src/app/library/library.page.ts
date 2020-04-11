@@ -28,6 +28,10 @@ export class LibraryPage implements OnInit {
     console.log(grim)
   }
 
+  ionViewDidEnter() {
+    this.getGrims()
+  }
+
   checkSearch(grim) {
 
     if (this.searchTerm == "") {
