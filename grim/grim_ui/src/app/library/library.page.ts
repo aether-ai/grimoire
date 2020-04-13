@@ -15,6 +15,7 @@ export class LibraryPage implements OnInit {
   public api_url = environment.api_url
   public grims: any;
   public streamlit_url = environment.streamlit_url
+  public ui_url = environment.ui_url
   public searchTerm = ""
 
   constructor(public magicService: MagicService, public navCtrl: NavController, public utilityService: UtilityService, private http: HttpClient) { }
@@ -23,9 +24,28 @@ export class LibraryPage implements OnInit {
     this.getGrims()
   }
 
-  //TODO
   downloadGrim(grim) {
-    console.log(grim)
+    console.log("Going to download grim " + grim["name"])
+
+    //Send post request with spells to backend
+    // POST formData to Server
+    let headers = new HttpHeaders({
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*"
+    });
+
+    var url = this.api_url + "/download_grim"
+    console.log("calling this url: " + url);
+
+    this.http.post(url, grim, { headers: headers }).toPromise()
+      .then((data) => { // Success
+        console.log(data)
+        //open new url
+        window.open(this.ui_url+data["url"],  "_system");
+      }, (err) => {
+        console.log("ok we should back out");
+        console.log(err);
+      })
   }
 
   ionViewDidEnter() {

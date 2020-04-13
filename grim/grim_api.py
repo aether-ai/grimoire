@@ -202,6 +202,72 @@ def launch_grim():
     return jsonify(jsonResp)
 
 
+
+@application.route("/download_grim", methods=["GET", "POST"])
+def download_grim():
+    """
+    Purpose:
+        Download grimoire
+    Args/Requests:
+         data = metadata needed to download grim 
+    Return:
+        json object with result of download
+    """
+    data = request.data
+    # hmm have streamlit run from start, and then have it just refresh
+    # instead of spawning new prorcces
+    grim = json.loads(data.decode("utf-8"))
+
+    #zip up files and send to nginx downloads folder
+    #provide link, hmm hardcode local host for now? will have to update to host ip...
+
+    #make temp dir
+    os.system("mkdir -p temp_grim/spells/")
+
+    #copy grim_st.py
+    os.system("cp grim_st.py temp_grim/")
+    os.system("cp grim_st.json temp_grim/")
+
+    #copy spell init
+    os.system("cp spells/__init__.py temp_grim/spells/")
+
+    #copy assets
+    os.system("cp -r assets temp_grim/")
+
+    #copy spells
+    for spell in grim["spells"]:
+        spell_name = spell["spell_name"]
+        spell_type = spell["spell_type"]
+
+        #make spell dir
+        cmd = "mkdir -p temp_grim/spells/"+spell_type+"/"
+        os.system(cmd)
+
+        #copy spell json and py
+        cmd = "cp spells/"+spell_type+"/"+spell_name+".* temp_grim/spells/"+spell_type+"/"
+        os.system(cmd)
+
+    grim_name = grim["name"].replace(" ","_")+"_grimoire.zip"
+
+    # Do the zip here too...
+    cmd = "zip "+grim_name+" -r temp_grim"
+    os.system(cmd)
+    # move to zip dir
+    cmd = "mv "+grim_name+" /var/www/html/zips/"
+    os.system(cmd)
+
+    #remove temp grim
+    cmd = "rm -rf temp_grim/"
+    os.system(cmd)
+
+
+    jsonResp = {}
+    jsonResp["status"] = "good"
+    jsonResp["url"] = "/zips/"+grim_name
+    return jsonify(jsonResp)
+
+
+
 @application.route("/get_grims")
 def get_grims():
     """

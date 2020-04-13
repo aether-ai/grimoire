@@ -49,7 +49,7 @@ def spell(spell_inputs):
             df_query = ""
             cond_count = 1
             for cond in what_cols:
-                df_query += cond + " >= " + str(threshold)
+                df_query += "`"+cond + "` >= " + str(threshold)
 
                 if cond_count == len(what_cols):
                     pass
@@ -68,7 +68,7 @@ def spell(spell_inputs):
             df_query = ""
             cond_count = 1
             for cond in what_cols:
-                df_query += cond + " <= " + str(threshold)
+                df_query += "`"+cond + "` <= " + str(threshold)
 
                 if cond_count == len(what_cols):
                     pass
@@ -99,9 +99,9 @@ def spell(spell_inputs):
             for cond in what_cols:
 
                 if equal_choice == "Text":
-                    df_query += cond + " == '" + threshold + "'"
+                    df_query += "`"+cond + "` == '" + threshold + "'"
                 elif equal_choice == "Number":
-                    df_query += cond + " == " + str(threshold)
+                    df_query += "`"+cond + "` == " + str(threshold)
 
                 if cond_count == len(what_cols):
                     pass

@@ -13,8 +13,9 @@ RUN bash /tmp/docker_environment/custom.sh
 # Copy Grimoire Files
 COPY grim*.py /home/
 COPY startup.sh /home/
-ADD spells /home/spells
-ADD helpers /home/helpers
+#mount spells and helpers so can edit without having to be in docker container
+#ADD spells /home/spells
+#ADD helpers /home/helpers
 ADD .streamlit /home/.streamlit 
 ADD sample_data /home/sample_data
 ADD test_grims /home/test_grims

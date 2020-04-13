@@ -1,12 +1,15 @@
 #!/bin/bash
 
 #make data dirs
+mkdir -p /home/spells
+mkdir -p /home/helpers
 mkdir -p /home/models
 mkdir -p /home/models/fasttext
 mkdir -p /home/data_files
 mkdir -p /home/data_files/audio
 mkdir -p /home/data_files/images
 mkdir -p /home/data_files/text
+mkdir -p /var/www/html/zips
 
 #replace 404 in nginx
 sed -i 's/=404/\/index.html/g' /etc/nginx/sites-available/default

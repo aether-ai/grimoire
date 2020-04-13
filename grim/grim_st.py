@@ -10,7 +10,7 @@ from io import StringIO
 from PIL import Image
 import requests
 from io import BytesIO
-
+import os
 
 @st.cache(allow_output_mutation=True)
 def load_image(data):
