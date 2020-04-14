@@ -9,10 +9,10 @@ Grimoire is powered by [Streamlit](https://www.streamlit.io/) which provides a f
 Insert Link to [demo](#)
 
 
-## Installing
+## Running
 ```bash
-git clone https://github.com/aether-ai/grimoire
-docker-compose up -d
+git clone https://github.com/aether-ai/grimoire && cd grimoire
+bash grim_run.sh
 ```
 
 ## Features 

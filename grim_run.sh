@@ -2,6 +2,8 @@
 echo "Making mount points for Grimoire"
 cd grim
 mkdir -p grimoire
+#Copy samples over
+cp sample_grims/* grimoire/
 mkdir -p models
 mkdir -p models/fasttext
 mkdir -p data_files

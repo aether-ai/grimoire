@@ -1,1 +1,1 @@
-{"name": "test run", "isTest": "True", "value": "test your grimoire", "spells": [{"has_user_spell_inputs": true, "reqs": [], "spell_image": "../../assets/spell_images/air/plot_map.png", "spell_info": "displays map with data", "spell_inputs": {}, "spell_inputs_metadata": [], "spell_name": "plot_map", "spell_output": "map_plot", "spell_type": "air", "takes_mana": true}], "spell_path": "test/test_run.json"}
+{"name": "test run", "isTest": "True","value": "test your grimoire", "spells": [], "spell_path": "test/test_run.json"}

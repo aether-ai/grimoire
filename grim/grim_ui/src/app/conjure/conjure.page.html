@@ -109,15 +109,14 @@
                             </ion-col>
                           </ion-row>
 
-                          <ion-card-header class = "ion-text-center">
+                          <ion-card-header class = "ion-text-center ion-text-wrap">
                             <ion-card-title>
                               {{spell["spell_name"]}}
                             </ion-card-title>
-                            <ion-card-subtitle>
-                              {{spell["spell_info"]}}
-                            </ion-card-subtitle>
+
                           </ion-card-header>
                           <ion-card-content class = "ion-text-center">
+                            <p>  {{spell["spell_info"]}}</p>
                             <ion-button *ngIf="inNewGrim(spell) == false && metRequirements(spell)" shape="round"
                               (click)="addToGrim(spell);">Add to Grimoire
                             </ion-button>
