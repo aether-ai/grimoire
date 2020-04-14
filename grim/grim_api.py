@@ -217,17 +217,20 @@ def download_grim():
     # hmm have streamlit run from start, and then have it just refresh
     # instead of spawning new prorcces
     grim = json.loads(data.decode("utf-8"))
+    grim["isTest"] = False
+    
+
 
     #zip up files and send to nginx downloads folder
     #provide link, hmm hardcode local host for now? will have to update to host ip...
 
     #make temp dir
     os.system("mkdir -p temp_grim/spells/")
-
+    with open("temp_grim/grim_st.json", "w") as outfile:
+        json.dump(grim, outfile)    
     #copy grim_st.py
+    grim_escape= grim["name"].replace(" ","\ ")
     os.system("cp grim_st.py temp_grim/")
-    os.system("cp grim_st.json temp_grim/")
-
     #copy spell init
     os.system("cp spells/__init__.py temp_grim/spells/")
 

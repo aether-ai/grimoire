@@ -116,7 +116,7 @@ def main():
     st.markdown("## " + grim["value"])
     spell_tomb = {}
 
-    if "isTest" in grim:
+    if "isTest" in grim and grim["isTest"]:
         hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
