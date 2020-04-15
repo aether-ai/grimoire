@@ -11,7 +11,8 @@ Insert Link to [demo](#)
 
 ## Running
 ```bash
-git clone https://github.com/aether-ai/grimoire && cd grimoire
+git clone https://github.com/aether-ai/grimoire
+cd grimoire
 bash grim_run.sh
 ```
 
@@ -20,9 +21,12 @@ bash grim_run.sh
 **Grimoire is like a web site builder for data analysis.**
 
 You can mix and match individual components to create your own workflow or use predefined templates.   
-Developers can also create thier own custom components using [python](#).
 
 ## Example Workflows
-Data Visualization - show example of a data viz workflow  
-Train your own model - show example of training your own model  
-Use pre-trained model - Show example of using a pretrained model for a task  
+Data Visualization
+
+
+Train your own Model
+
+
+Create your own Workflow
