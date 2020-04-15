@@ -21,15 +21,20 @@ bash grim_run.sh
 **Grimoire is like a web site builder for data analysis.**
 
 You can mix and match individual components to create your own workflow or use predefined templates.   
+Each component is referred to as a spell, while a collection of spells is a Grimoire. 
+Spells are made up of python code integrated with Streamlit to provide interaction.
 
-## Example Workflows
-Data Visualization
+## Example workflows
+Here are some example workflows Grimoire has, zoom in to see details.
 
+### Visualize your Data
+![Pair plot](images/viz1.png "Pair plot")
+![Heatmap](images/viz2.png "Heatmap")
 
 ### Train your own Model
 ![View data](images/model-train1.png "View data")
 ![Train model](images/model-train2.png "Train Model")
 ![Predict with Model](images/model-train3.png "Predict with Model")
 
-
-Create your own Workflow
+### Create your own Workflow
+![Create workflow](images/create1.png "Create workflow")
