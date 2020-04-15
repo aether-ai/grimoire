@@ -10,6 +10,8 @@ Insert Link to [demo](#)
 
 
 ## Running
+Requires [docker](https://www.docker.com/)
+
 ```bash
 git clone https://github.com/aether-ai/grimoire
 cd grimoire
