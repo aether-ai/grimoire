@@ -6,6 +6,6 @@ ionic build --prod
 cd ../
 #Build docker image
 echo "Building Grimoire Docker Image"
-docker build $@ -t aetheraidocker/grimoire:latest .
+docker build $@ -t aetheraidocker/grimoire:demo_site .
 cd ../
 echo "Build Complete"

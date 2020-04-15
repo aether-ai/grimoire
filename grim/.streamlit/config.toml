@@ -1,3 +1,4 @@
 [server]
 runOnSave = true
 folderWatchBlacklist = [".*"]
+maxUploadSize = 20
