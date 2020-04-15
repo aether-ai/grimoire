@@ -27,7 +27,9 @@ Data Visualization
 
 
 ### Train your own Model
-![alt text](images/model-train1.png "Train ML Model")
+![View data](images/model-train1.png "View data")
+![Train model](images/model-train2.png "Train Model")
+![Predict with Model](images/model-train3.png "Predict with Model")
 
 
 Create your own Workflow
