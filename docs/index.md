@@ -26,7 +26,8 @@ You can mix and match individual components to create your own workflow or use p
 Data Visualization
 
 
-Train your own Model
+### Train your own Model
+![alt text](images/model-train1.png "Train ML Model")
 
 
 Create your own Workflow
