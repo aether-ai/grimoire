@@ -6,7 +6,7 @@ layout: default
 Grimoire is powered by [Streamlit](https://www.streamlit.io/) which provides a full stack framework for developing data driven applications.**
 
 ## Interactive Demo
-Insert Link to [demo](#)
+Insert Link to [demo](http://3.95.182.1:9005/home)
 
 
 ## Running
