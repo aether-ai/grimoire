@@ -27,7 +27,7 @@
     "@types/jquery": "^3.3.34",
     "angular-datatables": "^9.0.1",
     "core-js": "^2.5.4",
-    "datatables.net": "^1.10.20",
+    "datatables.net": "^1.11.3",
     "datatables.net-dt": "^1.10.20",
     "jquery": "^3.5.0",
     "rxjs": "~6.5.1",
